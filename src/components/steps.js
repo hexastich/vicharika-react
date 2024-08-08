@@ -11,13 +11,10 @@ const Steps = (props) => {
         <div className="steps-container1 thq-grid-2">
           <div className="steps-section-header">
             <h2 className="thq-heading-2">
-              Discover the Power of Our Products
+              Simple Steps to Create an Account and Submit Complaints
             </h2>
             <p className="thq-body-large">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat.
+              Follow these simple steps to quickly create an account on Vicharika and start submitting your complaints about government issues. Our user-friendly platform ensures that your voice is heard and your concerns are addressed efficiently
             </p>
             <div className="steps-actions">
               <button className="thq-button-filled thq-button-animated steps-button">

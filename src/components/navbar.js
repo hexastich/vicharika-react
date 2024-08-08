@@ -1,7 +1,6 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
 import './navbar.css'
 
 const Navbar = (props) => {
@@ -17,16 +16,20 @@ const Navbar = (props) => {
           <nav className="navbar-links">
             <span className="thq-body-small thq-link">{props.link1}</span>
             <span className="thq-body-small thq-link">{props.link2}</span>
-            <span className="thq-body-small thq-link">{props.link3}</span>
-            <span className="thq-body-small thq-link"><a href='#ContactUs'>{props.link4}</a></span>
+            <a href={props.action3}>
+              <span className="thq-body-small thq-link">{props.link3}</span>
+            </a>
+            <span className="thq-body-small thq-link">
+              <a href="#ContactUs">{props.link4}</a>
+            </span>
             <span className="thq-body-small thq-link">{props.link5}</span>
           </nav>
           <div className="navbar-buttons">
             <button className="navbar-action1 thq-button-filled thq-button-animated">
-              <span className="thq-body-small">Action 1</span>
+              <span className="thq-body-small">Login</span>
             </button>
             <button className="navbar-action2 thq-button-outline thq-button-animated">
-              <span className="thq-body-small">Action 2</span>
+              <span className="thq-body-small">Redister</span>
             </button>
           </div>
         </div>
@@ -64,31 +67,34 @@ const Navbar = (props) => {
         </div>
       </header>
     </header>
-  )
+  );
 }
 
 Navbar.defaultProps = {
-  action1: '/',
-  link4: 'Contact Us',
-  link5: 'Link5',
-  link3: 'About Us',
   link1: 'Home',
+  action1: '/',
   link2: 'Complaints',
+  action2: '/complaints',
+  link3: 'About Us',
+  action3: '/about',
+  link4: 'Contact Us',
+  link5: 'Blog',
   logoAlt: 'Complaints Against Government',
   logoSrc: '/assets/images/logo.png',
-  action2: '/complaints',
+
 }
 
 Navbar.propTypes = {
+  link1: PropTypes.string,
   action1: PropTypes.string,
+  action2: PropTypes.string,
+  link2: PropTypes.string,
+  link3: PropTypes.string,
+  action3: PropTypes.string,
   link4: PropTypes.string,
   link5: PropTypes.string,
-  link3: PropTypes.string,
-  link1: PropTypes.string,
-  link2: PropTypes.string,
   logoAlt: PropTypes.string,
   logoSrc: PropTypes.string,
-  action2: PropTypes.string,
 }
 
 export default Navbar

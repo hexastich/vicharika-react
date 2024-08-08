@@ -4,11 +4,12 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
+  Redirect
 } from 'react-router-dom'
 
 import './style.css'
 import Home from './views/home'
+import About from './views/About';
 import NotFound from './views/not-found'
 
 const App = () => {
@@ -16,11 +17,12 @@ const App = () => {
     <Router>
       <Switch>
         <Route component={Home} exact path="/" />
+        <Route component={About} exact path="/About" />
         <Route component={NotFound} exact path="/not-found" />
         <Redirect to="**" />
       </Switch>
     </Router>
-  )
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById('app'))

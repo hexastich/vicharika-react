@@ -1,7 +1,5 @@
 import React from 'react'
-
 import PropTypes from 'prop-types'
-
 import './contact.css'
 
 const Contact = (props) => {
@@ -66,18 +64,19 @@ const Contact = (props) => {
 
 Contact.defaultProps = {
   content3:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.',
-  address1: '123 Main Street, City, State, India',
-  content1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    'Feel free to reach out to us for any queries or feedback regarding government policies.',
+  address1: 'Safina Tower, Qila Road, Aligarh, Uttar Pradesh, India, 202001',
+  content1: 'We are here to listen to your concerns about government issues.',
   content4:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.',
+    'Our team is dedicated to addressing your complaints and ensuring your voice is heard.',
   content5:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.',
+    'Your feedback is valuable to us and can help improve government transparency.',
   content2: 'Get in touch with us today!',
-  email1: 'contact@complaintsagainstgov.in',
+  email1: 'contact@vicharika.in',
   heading1: 'Contact Us',
-  phone1: '+91-123-456-7890',
+  phone1: '+91-9458031609',
 }
+
 
 Contact.propTypes = {
   content3: PropTypes.string,
