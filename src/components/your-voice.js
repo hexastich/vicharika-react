@@ -2,21 +2,21 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-import './cta.css'
+import './your-voice.css'
 
-const CTA = (props) => {
+const YourVoice = (props) => {
   return (
     <div className="thq-section-padding">
       <div className="thq-section-max-width">
-        <div className="cta-accent2-bg">
-          <div className="cta-accent1-bg">
-            <div className="cta-container1">
-              <div className="cta-content">
+        <div className="yourVoice-accent2-bg">
+          <div className="yourVoice-accent1-bg">
+            <div className="yourVoice-container1">
+              <div className="yourVoice-content">
                 <span className="thq-heading-2">{props.heading1}</span>
                 <p className="thq-body-large">{props.content1}</p>
               </div>
-              <div className="cta-actions">
-                <button type="button" className="thq-button-filled cta-button">
+              <div className="yourVoice-actions">
+                <button type="button" className="thq-button-filled yourVoice-button">
                   {props.action1}
                 </button>
               </div>
@@ -28,17 +28,17 @@ const CTA = (props) => {
   )
 }
 
-CTA.defaultProps = {
+YourVoice.defaultProps = {
   action1: 'Start Complaining',
   content1:
     'Speak up against government issues that affect you and your community.',
   heading1: 'Raise Your Voice',
 }
 
-CTA.propTypes = {
+YourVoice.propTypes = {
   action1: PropTypes.string,
   content1: PropTypes.string,
   heading1: PropTypes.string,
 }
 
-export default CTA
+export default YourVoice

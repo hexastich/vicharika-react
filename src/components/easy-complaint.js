@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import PropTypes from 'prop-types'
 
-import './features1.css'
+import './easy-complaint.css'
 
-const Features1 = (props) => {
+const EasyComplaint = (props) => {
   const [activeTab, setActiveTab] = useState(0)
   return (
     <div className="thq-section-padding">
@@ -81,7 +81,7 @@ const Features1 = (props) => {
   )
 }
 
-Features1.defaultProps = {
+EasyComplaint.defaultProps = {
   feature2Title: 'Anonymous Complaint Submission',
   feature2ImgAlt: 'Illustration of anonymous submission',
   feature2ImgSrc:
@@ -101,7 +101,7 @@ Features1.defaultProps = {
   feature3ImgAlt: 'Illustration of real-time tracking',
 }
 
-Features1.propTypes = {
+EasyComplaint.propTypes = {
   feature2Title: PropTypes.string,
   feature2ImgAlt: PropTypes.string,
   feature2ImgSrc: PropTypes.string,
@@ -116,4 +116,4 @@ Features1.propTypes = {
   feature3ImgAlt: PropTypes.string,
 }
 
-export default Features1
+export default EasyComplaint

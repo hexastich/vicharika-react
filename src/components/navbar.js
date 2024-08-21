@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import './navbar.css'
 
 const Navbar = (props) => {
+  console.log(props);
+
   return (
     <header className="navbar-container">
       <header data-thq="thq-navbar" className="navbar-navbar-interactive">
@@ -14,7 +16,9 @@ const Navbar = (props) => {
         />
         <div data-thq="thq-navbar-nav" className="navbar-desktop-menu">
           <nav className="navbar-links">
+          <a href={props.action1}>
             <span className="thq-body-small thq-link">{props.link1}</span>
+          </a>
             <span className="thq-body-small thq-link">{props.link2}</span>
             <a href={props.action3}>
               <span className="thq-body-small thq-link">{props.link3}</span>
@@ -29,7 +33,7 @@ const Navbar = (props) => {
               <span className="thq-body-small">Login</span>
             </button>
             <button className="navbar-action2 thq-button-outline thq-button-animated">
-              <span className="thq-body-small">Redister</span>
+              <span className="thq-body-small">Register</span>
             </button>
           </div>
         </div>
@@ -81,7 +85,6 @@ Navbar.defaultProps = {
   link5: 'Blog',
   logoAlt: 'Complaints Against Government',
   logoSrc: '/assets/images/logo.png',
-
 }
 
 Navbar.propTypes = {

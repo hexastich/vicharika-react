@@ -2,9 +2,9 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-import './steps.css'
+import './account-steps.css'
 
-const Steps = (props) => {
+const AccountSteps = (props) => {
   return (
     <div className="steps-container thq-section-padding">
       <div className="steps-max-width thq-section-max-width">
@@ -58,7 +58,7 @@ const Steps = (props) => {
   )
 }
 
-Steps.defaultProps = {
+AccountSteps.defaultProps = {
   step2Description:
     'Provide detailed information about the government issue you want to complain about, including any relevant documents or evidence.',
   step1Description:
@@ -73,7 +73,7 @@ Steps.defaultProps = {
   step1Title: 'Create an Account',
 }
 
-Steps.propTypes = {
+AccountSteps.propTypes = {
   step2Description: PropTypes.string,
   step1Description: PropTypes.string,
   step2Title: PropTypes.string,
@@ -84,4 +84,4 @@ Steps.propTypes = {
   step1Title: PropTypes.string,
 }
 
-export default Steps
+export default AccountSteps
