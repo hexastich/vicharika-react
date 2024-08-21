@@ -3,12 +3,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/navbar'
-import Hero from '../components/hero'
-import Features1 from '../components/features1'
-import CTA from '../components/cta'
-import Features2 from '../components/features2'
+import Slider from '../components/slider'
+import EasyComplaint from '../components/easy-complaint'
+import YourVoice from '../components/your-voice'
+import ComplaintFeatures from '../components/complaint-features'
 import Pricing from '../components/pricing'
-import Steps from '../components/steps'
+import AccountSteps from '../components/account-steps'
 import Testimonial from '../components/testimonial'
 import Contact from '../components/contact'
 import Footer from '../components/footer'
@@ -21,12 +21,12 @@ const Home = (props) => {
         <title>Vicharika: Voice Your Concerns About Government Issues in India</title>
       </Helmet>
       <Navbar></Navbar>
-      <Hero></Hero>
-      <Features1></Features1>
-      <CTA></CTA>
-      <Features2></Features2>
+      <Slider></Slider>
+      <EasyComplaint></EasyComplaint>
+      <YourVoice></YourVoice>
+      <ComplaintFeatures></ComplaintFeatures>
       <Pricing></Pricing>
-      <Steps></Steps>
+      <AccountSteps></AccountSteps>
       <Testimonial></Testimonial>
       <Contact></Contact>
       <Footer></Footer>

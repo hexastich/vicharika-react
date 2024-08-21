@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import PropTypes from 'prop-types'
 
-import './features2.css'
+import './complaint-features.css'
 
-const Features2 = (props) => {
+const ComplaintFeatures = (props) => {
   const [activeTab, setActiveTab] = useState(0)
   return (
     <div className="thq-section-padding">
@@ -12,8 +12,7 @@ const Features2 = (props) => {
         <div className="features2-tabs-menu">
           <div
             onClick={() => setActiveTab(0)}
-            className="features2-tab-horizontal"
-          >
+            className="features2-tab-horizontal">
             <div className="features2-divider-container">
               {activeTab === 0 && <div className="features2-container2"></div>}
             </div>
@@ -81,28 +80,28 @@ const Features2 = (props) => {
   )
 }
 
-Features2.defaultProps = {
+ComplaintFeatures.defaultProps = {
   feature2Title: 'Anonymous Complaints',
-  feature3Title: 'Feature #3',
+  feature3Title: 'Feature #3: Community Support',
   feature1ImgSrc:
     'https://images.unsplash.com/photo-1470075446540-4391a96ec621?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMjMyMjAyOXw&ixlib=rb-4.0.3&q=80&w=1080',
   feature2Description:
     'Users can submit complaints anonymously to protect their identity.',
-  feature1Title: 'Feature #1',
+  feature1Title: 'Feature #1: Voice Your Concerns',
   feature2ImgAlt: 'Illustration of anonymous complaints',
   feature2ImgSrc:
     'https://images.unsplash.com/photo-1519955045385-7cdb8e07c76f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMjMyMjAzMHw&ixlib=rb-4.0.3&q=80&w=1080',
-  feature1ImgAlt: 'feature 1',
+  feature1ImgAlt: 'Feature #3: Community Support',
   feature3ImgAlt: 'image',
   feature1Description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
+    'Raise your voice and share your concerns about India\'s government policies and actions. This platform gives you the power to express your opinions and provide valuable feedback that can lead to meaningful change.',
   feature3Description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
+    'Join a community of like-minded individuals who are passionate about creating a better India. Engage in discussions, share insights, and collaborate on initiatives that hold the government accountable for its actions.',
   feature3ImgSrc:
     'https://images.unsplash.com/photo-1546778316-dfda79f1c84e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMjMyMjAyOXw&ixlib=rb-4.0.3&q=80&w=1080',
 }
 
-Features2.propTypes = {
+ComplaintFeatures.propTypes = {
   feature2Title: PropTypes.string,
   feature3Title: PropTypes.string,
   feature1ImgSrc: PropTypes.string,
@@ -117,4 +116,4 @@ Features2.propTypes = {
   feature3ImgSrc: PropTypes.string,
 }
 
-export default Features2
+export default ComplaintFeatures
