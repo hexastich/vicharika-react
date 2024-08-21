@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
 }
+
 .contact-max-width {
   gap: var(--dl-space-space-twounits);
   display: flex;
