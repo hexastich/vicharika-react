@@ -4,10 +4,18 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.1.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.0.0",
+    "@mui/material": "^6.0.0",
+    "@mui/x-date-pickers": "^7.14.0",
+    "@tanstack/query-core": "^5.52.2",
+    "@tanstack/react-query": "^5.52.2",
     "dangerous-html": "0.1.13",
+    "material-react-table": "^2.13.1",
     "prop-types": "15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.3.4"
   },
@@ -33,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.52.0",
     "@types/react": "^17.0.80",
     "@types/react-dom": "^17.0.25",
     "@types/react-router-dom": "^5.3.3",
