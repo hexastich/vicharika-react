@@ -18,7 +18,7 @@ const Navbar = (props) => {
           <a href={props.action1}>
             <span className="thq-body-small thq-link">{props.link1}</span>
           </a>
-            <span className="thq-body-small thq-link">{props.link2}</span>
+            <a href={props.action2}><span className="thq-body-small thq-link">{props.link2}</span></a>
             <a href={props.action3}>
               <span className="thq-body-small thq-link">{props.link3}</span>
             </a>
@@ -76,8 +76,8 @@ const Navbar = (props) => {
 Navbar.defaultProps = {
   link1: 'Home',
   action1: '/',
-  link2: 'Complaints',
-  action2: '/complaints',
+  link2: 'Complanints',
+  action2: '/complanints',
   link3: 'About Us',
   action3: '/about',
   link4: 'Contact Us',
