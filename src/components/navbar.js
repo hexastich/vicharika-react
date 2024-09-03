@@ -18,9 +18,7 @@ const Navbar = (props) => {
           <a href={props.action1}>
             <span className="thq-body-small thq-link">{props.link1}</span>
           </a>
-          <a href={props.action2}>
             <span className="thq-body-small thq-link">{props.link2}</span>
-            </a>
             <a href={props.action3}>
               <span className="thq-body-small thq-link">{props.link3}</span>
             </a>
@@ -31,10 +29,10 @@ const Navbar = (props) => {
           </nav>
           <div className="navbar-buttons">
             <button className="navbar-action1 thq-button-filled thq-button-animated">
-              <span className="thq-body-small"><a href="/login">Login</a></span>
+              <span className="thq-body-small"><a href={props.action6}>{props.link6}</a></span>
             </button>
             <button className="navbar-action2 thq-button-outline thq-button-animated">
-              <span className="thq-body-small"><a href="/Register">Register</a></span>
+              <span className="thq-body-small"><a href={props.action7}>{props.link7}</a></span>
             </button>
           </div>
         </div>
@@ -66,8 +64,8 @@ const Navbar = (props) => {
             </nav>
           </div>
           <div className="navbar-buttons1">
-            <button className="thq-button-filled">Login</button>
-            <button className="thq-button-outline">Register</button>
+            <button className="thq-button-filled"><span className="thq-body-small"><a href={props.action6}>{props.link6}</a></span></button>
+            <button className="thq-button-outline"><span className="thq-body-small"><a href={props.action7}>{props.link7}</a></span></button>
           </div>
         </div>
       </header>
@@ -84,6 +82,10 @@ Navbar.defaultProps = {
   action3: '/about',
   link4: 'Contact Us',
   link5: 'Blog',
+  link6: 'Login',
+  action6: '/login',
+  link7: 'Register',
+  action7: '/register',
   logoAlt: 'Complaints Against Government',
   logoSrc: '/assets/images/logo.png',
 }
