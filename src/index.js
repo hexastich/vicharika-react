@@ -6,6 +6,9 @@ import './index.css'
 import Home from './views/home'
 import About from './views/about';
 import NotFound from './views/not-found'
+import Login from './components/login'
+import Complaints from './components/complaints'
+import Register from './components/register'
 
 const App = () => {
   return (
@@ -13,7 +16,10 @@ const App = () => {
       <Switch>
         <Route component={Home} exact path="/" />
         <Route component={About} exact path="/About" />
+        <Route component={Login} exact path="/login" />
+        <Route component={Register} exact path="/register" />
         <Route component={NotFound} exact path="/not-found" />
+        <Route component={Complaints} exact path="/complaints" />
         <Redirect to="**" />
       </Switch>
     </Router>

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import PropTypes from 'prop-types'
 import './navbar.css'
 
@@ -19,7 +18,9 @@ const Navbar = (props) => {
           <a href={props.action1}>
             <span className="thq-body-small thq-link">{props.link1}</span>
           </a>
+          <a href={props.action2}>
             <span className="thq-body-small thq-link">{props.link2}</span>
+            </a>
             <a href={props.action3}>
               <span className="thq-body-small thq-link">{props.link3}</span>
             </a>
@@ -30,10 +31,10 @@ const Navbar = (props) => {
           </nav>
           <div className="navbar-buttons">
             <button className="navbar-action1 thq-button-filled thq-button-animated">
-              <span className="thq-body-small">Login</span>
+              <span className="thq-body-small"><a href="/login">Login</a></span>
             </button>
             <button className="navbar-action2 thq-button-outline thq-button-animated">
-              <span className="thq-body-small">Register</span>
+              <span className="thq-body-small"><a href="/Register">Register</a></span>
             </button>
           </div>
         </div>
