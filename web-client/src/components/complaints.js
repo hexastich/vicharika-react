@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
+import { Helmet } from 'react-helmet'
 import {
   MRT_EditActionButtons,
   MaterialReactTable,
@@ -321,10 +322,16 @@ function useDeleteUser() {
 const queryClient = new QueryClient();
 
 const ExampleWithProviders = () => (
-  //Put this with your other react-query providers near root of your app
+  <>
+  <Helmet>
+  <title>Vicharika: Voice Your Concerns About Government Issues in India</title>
+</Helmet>
+<Navbar></Navbar>
   <QueryClientProvider client={queryClient}>
     <Example />
   </QueryClientProvider>
+  <Footer></Footer>
+  </>
 );
 
 export default ExampleWithProviders;

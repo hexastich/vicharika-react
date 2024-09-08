@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import  { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router,Route,Switch, Redirect } from 'react-router-dom'
 
 import './index.css'
@@ -11,6 +11,9 @@ import Login from './components/login'
 import Register from './components/register'
 
 const App = () => {
+ const {REACT_APP_NAME} = process.env
+ console.log('App=============>>'+REACT_APP_NAME);
+ console.log('App=============>>'+process.env.REACT_APP_VERSION);
   return (
     <Router>
       <Switch>
@@ -26,4 +29,6 @@ const App = () => {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+const container = document.getElementById('app')
+const root = createRoot(container);
+root.render(<App />)

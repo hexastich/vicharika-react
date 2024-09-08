@@ -1,6 +1,4 @@
 import React from 'react'
-
-import Script from 'dangerous-html/react'
 import PropTypes from 'prop-types'
 
 import './slider.css'
@@ -158,29 +156,8 @@ const Slider = (props) => {
         </div>
       </div>
       <div>
-        <div className="slider-container1">
-          <Script
-            html={`<style>
-  @keyframes scroll-x {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-100% - 16px));
-    }
-  }
-
-  @keyframes scroll-y {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(calc(-100% - 16px));
-    }
-  }
-</style>
-`}
-          ></Script>
+        <div className="slider-container1 scroll-x scroll-y">
+          
         </div>
       </div>
     </div>

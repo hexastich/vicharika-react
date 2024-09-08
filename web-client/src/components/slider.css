@@ -1,3 +1,29 @@
+.scroll-x {
+  animation: scroll-x 5s linear infinite;
+}
+
+.scroll-y {
+  animation: scroll-y 5s linear infinite;
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 16px));
+  }
+}
+
+@keyframes scroll-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - 16px));
+  }
+}
+
 .slider-header78 {
   gap: var(--dl-space-space-threeunits);
   width: 100%;
