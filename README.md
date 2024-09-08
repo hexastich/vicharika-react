@@ -17,7 +17,7 @@
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, etc.)
-- Node.js (version 14.x or later)
+- Node.js (version 18.x or later)
 - Git
 
 ### Installation

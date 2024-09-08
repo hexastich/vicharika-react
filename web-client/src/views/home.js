@@ -29,7 +29,7 @@ const Home = (props) => {
       <AccountSteps></AccountSteps>
       <Testimonial></Testimonial>
       <Contact></Contact>
-      <Footer></Footer>
+      <Footer name="footer"></Footer>
     </div>
   )
 }

@@ -1,18 +1,16 @@
 import React from 'react'
-
-import PropTypes from 'prop-types'
-
 import './footer.css'
 
 const Footer = (props) => {
+  console.log(props.name);
   return (
     <footer className="footer-footer1 thq-section-padding">
       <div className="footer-max-width thq-section-max-width">
         <div className="footer-content">
           <div className="footer-newsletter">
             <img
-              alt={props.logoAlt}
-              src={props.logoSrc}
+              alt='Complaints Against Government Logo'
+              src='/assets/images/logo.png'
               className="footer-image1"
             />
             <span className="thq-body-small">
@@ -29,18 +27,18 @@ const Footer = (props) => {
                   />
                 </div>
                 <button className="thq-button-outline footer-button">
-                  <span className="thq-body-small">{props.action1}</span>
+                  <span className="thq-body-small">/submit-complaint</span>
                 </button>
               </div>
               <span className="footer-content2 thq-body-small">
-                {props.content2}
+                 © 2024 Complaints Against Government. All rights reserved.
               </span>
             </div>
           </div>
           <div className="footer-links">
             <div className="footer-column1">
               <strong className="thq-body-large footer-column1-title">
-                {props.column1Title}
+              Explore
               </strong>
               <div className="footer-footer-links">
                 <a
@@ -49,7 +47,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link1}
+                  Home
                 </a>
                 <a
                   href="https://example.com"
@@ -57,7 +55,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link2}
+                  About Us
                 </a>
                 <a
                   href="https://example.com"
@@ -65,7 +63,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link3}
+                  Contact Us
                 </a>
                 <a
                   href="https://example.com"
@@ -73,7 +71,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link4}
+                  FAQs
                 </a>
                 <a
                   href="https://example.com"
@@ -81,13 +79,13 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link5}
+                  Facebook
                 </a>
               </div>
             </div>
             <div className="footer-column2">
               <strong className="thq-body-large footer-column2-title">
-                {props.column2Title}
+              Connect
               </strong>
               <div className="footer-footer-links1">
                 <a
@@ -96,7 +94,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link6}
+                  Twitter
                 </a>
                 <a
                   href="https://example.com"
@@ -104,7 +102,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link7}
+                  Instagram
                 </a>
                 <a
                   href="https://example.com"
@@ -112,7 +110,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link8}
+                 LinkedIn
                 </a>
                 <a
                   href="https://example.com"
@@ -120,7 +118,7 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link9}
+                  YouTube
                 </a>
                 <a
                   href="https://example.com"
@@ -128,13 +126,13 @@ const Footer = (props) => {
                   rel="noreferrer noopener"
                   className="thq-body-small"
                 >
-                  {props.link10}
+                  Pinterest
                 </a>
               </div>
             </div>
             <div className="footer-column3">
               <strong className="thq-body-large footer-social-link1-title">
-                {props.socialLinkTitleCategory}
+              Follow Us
               </strong>
               <div className="footer-social-links">
                 <div className="footer-link">
@@ -186,65 +184,17 @@ const Footer = (props) => {
         <div className="footer-credits">
           <div className="thq-divider-horizontal"></div>
           <div className="footer-row">
-            <span className="thq-body-small">{props.content3}</span>
+            <span className="thq-body-small">Join us in making a difference.</span>
             <div className="footer-footer-links2">
-              <span className="thq-body-small">{props.privacyLink}</span>
-              <span className="thq-body-small">{props.termsLink}</span>
-              <span className="thq-body-small">{props.cookiesLink}</span>
+              <span className="thq-body-small">/privacy-policy</span>
+              <span className="thq-body-small">/terms-and-conditions</span>
+              <span className="thq-body-small">/cookie-policy</span>
             </div>
           </div>
         </div>
       </div>
     </footer>
   )
-}
-
-Footer.defaultProps = {
-  logoSrc: '/assets/images/logo.png',
-  content3: 'Join us in making a difference.',
-  termsLink: '/terms-and-conditions',
-  link5: 'Facebook',
-  column2Title: 'Connect',
-  link4: 'FAQs',
-  cookiesLink: '/cookie-policy',
-  column1Title: 'Explore',
-  link6: 'Twitter',
-  action1: '/submit-complaint',
-  link3: 'Contact Us',
-  logoAlt: 'Complaints Against Government Logo',
-  link1: 'Home',
-  link2: 'About Us',
-  link8: 'LinkedIn',
-  link10: 'Pinterest',
-  link7: 'Instagram',
-  privacyLink: '/privacy-policy',
-  link9: 'YouTube',
-  content2: '© 2024 Complaints Against Government. All rights reserved.',
-  socialLinkTitleCategory: 'Follow Us',
-}
-
-Footer.propTypes = {
-  logoSrc: PropTypes.string,
-  content3: PropTypes.string,
-  termsLink: PropTypes.string,
-  link5: PropTypes.string,
-  column2Title: PropTypes.string,
-  link4: PropTypes.string,
-  cookiesLink: PropTypes.string,
-  column1Title: PropTypes.string,
-  link6: PropTypes.string,
-  action1: PropTypes.string,
-  link3: PropTypes.string,
-  logoAlt: PropTypes.string,
-  link1: PropTypes.string,
-  link2: PropTypes.string,
-  link8: PropTypes.string,
-  link10: PropTypes.string,
-  link7: PropTypes.string,
-  privacyLink: PropTypes.string,
-  link9: PropTypes.string,
-  content2: PropTypes.string,
-  socialLinkTitleCategory: PropTypes.string,
 }
 
 export default Footer
