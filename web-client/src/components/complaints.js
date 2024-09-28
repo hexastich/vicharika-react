@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import { Helmet } from 'react-helmet'
@@ -24,7 +24,7 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
-import { fakeData, usStates } from './makeData';
+import {inStates } from './staticData';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -40,33 +40,33 @@ const Example = () => {
         size: 80,
       },
       {
-        accessorKey: 'firstName',
-        header: 'First Name',
+        accessorKey: 'name',
+        header: 'Full Name',
         muiEditTextFieldProps: {
           required: true,
-          error: !!validationErrors?.firstName,
-          helperText: validationErrors?.firstName,
+          error: !!validationErrors?.name,
+          helperText: validationErrors?.name,
           //remove any previous validation errors when user focuses on the input
           onFocus: () =>
             setValidationErrors({
               ...validationErrors,
-              firstName: undefined,
+              name: undefined,
             }),
           //optionally add validation checking for onBlur or onChange
         },
       },
       {
-        accessorKey: 'lastName',
-        header: 'Last Name',
+        accessorKey: 'phone',
+        header: 'Contact Number',
         muiEditTextFieldProps: {
           required: true,
-          error: !!validationErrors?.lastName,
-          helperText: validationErrors?.lastName,
+          error: !!validationErrors?.phone,
+          helperText: validationErrors?.phone,
           //remove any previous validation errors when user focuses on the input
           onFocus: () =>
             setValidationErrors({
               ...validationErrors,
-              lastName: undefined,
+              phone: undefined,
             }),
         },
       },
@@ -87,14 +87,94 @@ const Example = () => {
         },
       },
       {
+        accessorKey: 'joined_date',
+        header: 'Joined Date',
+        muiEditTextFieldProps: {
+          type: 'date',
+          required: true,
+          error: !!validationErrors?.joined_date,
+          helperText: validationErrors?.joined_date,
+          //remove any previous validation errors when user focuses on the input
+          onFocus: () =>
+            setValidationErrors({
+              ...validationErrors,
+              joined_date: undefined,
+            }),
+        },
+      },
+      {
         accessorKey: 'state',
         header: 'State',
+        type: 'select',
         editVariant: 'select',
-        editSelectOptions: usStates,
+        editSelectOptions: inStates,
         muiEditTextFieldProps: {
           select: true,
           error: !!validationErrors?.state,
           helperText: validationErrors?.state,
+        },
+      },
+      {
+        accessorKey: 'city',
+        header: 'City',
+        muiEditTextFieldProps: {
+          required: true,
+          error: !!validationErrors?.city,
+          helperText: validationErrors?.city,
+          //remove any previous validation errors when user focuses on the input
+          onFocus: () =>
+            setValidationErrors({
+              ...validationErrors,
+              city: undefined,
+            }),
+        },
+      },
+      {
+        accessorKey: 'zip_code',
+        header: 'Zip Code',
+        muiEditTextFieldProps: {
+          type: 'number',
+          required: true,
+          error: !!validationErrors?.zip_code,
+          helperText: validationErrors?.zip_code,
+          //remove any previous validation errors when user focuses on the input
+          onFocus: () =>
+            setValidationErrors({
+              ...validationErrors,
+              zip_code: undefined,
+            }),
+        },
+      },
+      {
+        accessorKey: 'account_type',
+        header: 'Account Type',
+        muiEditTextFieldProps: {
+          type: 'account',
+          required: true,
+          error: !!validationErrors?.account_type,
+          helperText: validationErrors?.account_type,
+          //remove any previous validation errors when user focuses on the input
+          onFocus: () =>
+            setValidationErrors({
+              ...validationErrors,
+              account_type: undefined,
+            }),
+        },
+      },
+      {
+        accessorKey: 'anonymous',
+        header: 'Anonymous',
+        muiEditTextFieldProps: {
+          type: 'anonymous',
+          required: true,
+          error: !!validationErrors?.anonymous,
+          helperText: validationErrors?.anonymous,
+          //remove any previous validation errors when user focuses on the input
+          onFocus: () =>
+            setValidationErrors({
+              ...validationErrors,
+              anonymous: undefined,
+            }),
         },
       },
     ],
@@ -271,9 +351,11 @@ function useGetUsers() {
   return useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      //send api request here
-      await new Promise((resolve) => setTimeout(resolve, 1000)); //fake api call
-      return Promise.resolve(fakeData);
+      const response = await fetch(`${process.env.REACT_APP_SERVER_API_BASE_URL}/users`); 
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return await response.json();
     },
     refetchOnWindowFocus: false,
   });
@@ -347,10 +429,11 @@ const validateEmail = (email) =>
 
 function validateUser(user) {
   return {
-    firstName: !validateRequired(user.firstName)
-      ? 'First Name is Required'
+    name: !validateRequired(user.name)
+      ? 'Full Name is Required'
       : '',
-    lastName: !validateRequired(user.lastName) ? 'Last Name is Required' : '',
+   // contactNumber: !validateRequired(user.contactNumber) ? 'Last Name is Required' : '',
     email: !validateEmail(user.email) ? 'Incorrect Email Format' : '',
   };
 }
+

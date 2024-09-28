@@ -9,30 +9,30 @@ const Navbar = (props) => {
     <header className="navbar-container">
       <header data-thq="thq-navbar" className="navbar-navbar-interactive">
         <img
-          alt={props.logoAlt}
-          src={props.logoSrc}
+          alt='Complaints Against Government'
+          src='/assets/images/logo.png'
           className="navbar-image1"
         />
         <div data-thq="thq-navbar-nav" className="navbar-desktop-menu">
           <nav className="navbar-links">
-          <a href={props.action1}>
-            <span className="thq-body-small thq-link">{props.link1}</span>
+          <a href='/'>
+            <span className="thq-body-small thq-link">Home</span>
           </a>
-            <a href={props.action2}><span className="thq-body-small thq-link">{props.link2}</span></a>
-            <a href={props.action3}>
-              <span className="thq-body-small thq-link">{props.link3}</span>
+            <a href='/complanints'><span className="thq-body-small thq-link">Complanints</span></a>
+            <a href='/about'>
+              <span className="thq-body-small thq-link">About Us</span>
             </a>
             <span className="thq-body-small thq-link">
-              <a href="#ContactUs">{props.link4}</a>
+              <a href="#ContactUs">Contact Us</a>
             </span>
-            <span className="thq-body-small thq-link">{props.link5}</span>
+            <span className="thq-body-small thq-link">Blog</span>
           </nav>
           <div className="navbar-buttons">
             <button className="navbar-action1 thq-button-filled thq-button-animated">
-              <span className="thq-body-small"><a href={props.action6}>{props.link6}</a></span>
+              <span className="thq-body-small"><a href='/login'>Login</a></span>
             </button>
             <button className="navbar-action2 thq-button-outline thq-button-animated">
-              <span className="thq-body-small"><a href={props.action7}>{props.link7}</a></span>
+              <span className="thq-body-small"><a href='/register'>Register</a></span>
             </button>
           </div>
         </div>
@@ -45,8 +45,8 @@ const Navbar = (props) => {
           <div className="navbar-nav">
             <div className="navbar-top">
               <img
-                alt={props.logoAlt}
-                src={props.logoSrc}
+                alt='Complaints Against Government'
+                src='/assets/images/logo.png'
                 className="navbar-logo"
               />
               <div data-thq="thq-close-menu" className="navbar-close-menu">
@@ -56,51 +56,21 @@ const Navbar = (props) => {
               </div>
             </div>
             <nav className="navbar-links1">
-              <span className="thq-body-small thq-link">{props.link1}</span>
-              <span className="thq-body-small thq-link">{props.link2}</span>
-              <span className="thq-body-small thq-link">{props.link3}</span>
-              <span className="thq-body-small thq-link">{props.link4}</span>
-              <span className="thq-body-small thq-link">{props.link5}</span>
+              <span className="thq-body-small thq-link">Home</span>
+              <span className="thq-body-small thq-link">Complanints</span>
+              <span className="thq-body-small thq-link">About Us</span>
+              <span className="thq-body-small thq-link">Contact Us</span>
+              <span className="thq-body-small thq-link">Blog</span>
             </nav>
           </div>
           <div className="navbar-buttons1">
-            <button className="thq-button-filled"><span className="thq-body-small"><a href={props.action6}>{props.link6}</a></span></button>
-            <button className="thq-button-outline"><span className="thq-body-small"><a href={props.action7}>{props.link7}</a></span></button>
+            <button className="thq-button-filled"><span className="thq-body-small"><a href='/login'>Login</a></span></button>
+            <button className="thq-button-outline"><span className="thq-body-small"><a href='/register'>Register</a></span></button>
           </div>
         </div>
       </header>
     </header>
   );
-}
-
-Navbar.defaultProps = {
-  link1: 'Home',
-  action1: '/',
-  link2: 'Complanints',
-  action2: '/complanints',
-  link3: 'About Us',
-  action3: '/about',
-  link4: 'Contact Us',
-  link5: 'Blog',
-  link6: 'Login',
-  action6: '/login',
-  link7: 'Register',
-  action7: '/register',
-  logoAlt: 'Complaints Against Government',
-  logoSrc: '/assets/images/logo.png',
-}
-
-Navbar.propTypes = {
-  link1: PropTypes.string,
-  action1: PropTypes.string,
-  action2: PropTypes.string,
-  link2: PropTypes.string,
-  link3: PropTypes.string,
-  action3: PropTypes.string,
-  link4: PropTypes.string,
-  link5: PropTypes.string,
-  logoAlt: PropTypes.string,
-  logoSrc: PropTypes.string,
 }
 
 export default Navbar

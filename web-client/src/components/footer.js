@@ -2,7 +2,6 @@ import React from 'react'
 import './footer.css'
 
 const Footer = (props) => {
-  console.log(props.name);
   return (
     <footer className="footer-footer1 thq-section-padding">
       <div className="footer-max-width thq-section-max-width">
