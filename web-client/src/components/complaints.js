@@ -24,7 +24,7 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
-import {inStates } from './staticData';
+import { inStates } from './staticData';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -238,9 +238,9 @@ const Example = () => {
     getRowId: (row) => row.id,
     muiToolbarAlertBannerProps: isLoadingUsersError
       ? {
-          color: 'error',
-          children: 'Error loading data',
-        }
+        color: 'error',
+        children: 'Error loading data',
+      }
       : undefined,
     muiTableContainerProps: {
       sx: {
@@ -254,8 +254,8 @@ const Example = () => {
     //optionally customize modal content
     renderCreateRowDialogContent: ({ table, row, internalEditComponents }) => (
       <>
-     
-      
+
+
         <DialogTitle variant="h3">User</DialogTitle>
 
         <DialogContent
@@ -351,7 +351,7 @@ function useGetUsers() {
   return useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const response = await fetch(`${process.env.REACT_APP_SERVER_API_BASE_URL}/users`); 
+      const response = await fetch(`${process.env.REACT_APP_SERVER_API_BASE_URL}/users`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -405,14 +405,14 @@ const queryClient = new QueryClient();
 
 const ExampleWithProviders = () => (
   <>
-  <Helmet>
-  <title>Vicharika: Voice Your Concerns About Government Issues in India</title>
-</Helmet>
-<Navbar></Navbar>
-  <QueryClientProvider client={queryClient}>
-    <Example />
-  </QueryClientProvider>
-  <Footer></Footer>
+    <Helmet>
+      <title>Vicharika: Voice Your Concerns About Government Issues in India</title>
+    </Helmet>
+    <Navbar></Navbar>
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
+    <Footer></Footer>
   </>
 );
 
@@ -432,7 +432,7 @@ function validateUser(user) {
     name: !validateRequired(user.name)
       ? 'Full Name is Required'
       : '',
-   // contactNumber: !validateRequired(user.contactNumber) ? 'Last Name is Required' : '',
+    // contactNumber: !validateRequired(user.contactNumber) ? 'Last Name is Required' : '',
     email: !validateEmail(user.email) ? 'Incorrect Email Format' : '',
   };
 }
