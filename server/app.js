@@ -12,8 +12,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/api', userRoutes);
-app.use('/api', complaintRoutes);
+app.use('/v1', userRoutes);
+app.use('/v1', complaintRoutes);
 
 app.get('/', (req, res) => {
   res.send('Vicharika Server is running on port ' + port + '...');
