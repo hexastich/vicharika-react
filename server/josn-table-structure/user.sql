@@ -8,6 +8,5 @@ CREATE TABLE users (
     city VARCHAR(100),
     zip_code VARCHAR(20),
     account_type ENUM('registered', 'guest') DEFAULT 'guest',
-    anonymous BOOLEAN DEFAULT FALSE,
     joined_date DATE DEFAULT CURRENT_DATE
 );

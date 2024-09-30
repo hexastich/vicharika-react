@@ -11,7 +11,6 @@
         "zip_code": "Postal Code"
       },
       "account_type": "registered/guest",
-      "anonymous": false,
       "joined_date": "dd-mm-yyyy"
     }
   }

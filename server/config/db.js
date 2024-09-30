@@ -40,7 +40,7 @@ const checkAndCreateTable = (tableName, tableSchema) => {
 };
 
 const tables = [
-  { name: 'users', schema: 'id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, email VARCHAR(255) UNIQUE, phone VARCHAR(20), country VARCHAR(100), state VARCHAR(100), city VARCHAR(100), zip_code VARCHAR(20), account_type ENUM(\'registered\', \'guest\') DEFAULT \'guest\', anonymous BOOLEAN DEFAULT FALSE, joined_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP' },
+  { name: 'users', schema: 'id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, email VARCHAR(255) UNIQUE, phone VARCHAR(20), country VARCHAR(100), state VARCHAR(100), city VARCHAR(100), zip_code VARCHAR(20), account_type ENUM(\'registered\', \'guest\') DEFAULT \'guest\', joined_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP' },
   { name: 'complaints', schema: 'id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, title VARCHAR(255) NOT NULL, description TEXT NOT NULL, category VARCHAR(255) NOT NULL, department VARCHAR(255), country VARCHAR(100), state VARCHAR(100), city VARCHAR(100), zip_code VARCHAR(20), status ENUM(\'submitted\', \'in_review\', \'resolved\', \'closed\') DEFAULT \'submitted\', submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP, anonymous BOOLEAN DEFAULT FALSE, FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' },
   { name: 'attachments', schema: 'id INT AUTO_INCREMENT PRIMARY KEY, complaint_id INT, type ENUM(\'image\', \'video\', \'audio\', \'document\'), file_name VARCHAR(255), file_url VARCHAR(255), FOREIGN KEY (complaint_id) REFERENCES complaints(id) ON DELETE CASCADE' }
 ];

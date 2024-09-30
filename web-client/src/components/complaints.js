@@ -27,6 +27,7 @@ import {
 import { inStates } from './staticData';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { bool, number } from 'prop-types';
 
 const Example = () => {
   const [validationErrors, setValidationErrors] = useState({});
@@ -149,7 +150,7 @@ const Example = () => {
         accessorKey: 'account_type',
         header: 'Account Type',
         muiEditTextFieldProps: {
-          type: 'account',
+          select: true, // Limit to "Registered" or "Guest"
           required: true,
           error: !!validationErrors?.account_type,
           helperText: validationErrors?.account_type,
@@ -160,22 +161,10 @@ const Example = () => {
               account_type: undefined,
             }),
         },
-      },
-      {
-        accessorKey: 'anonymous',
-        header: 'Anonymous',
-        muiEditTextFieldProps: {
-          type: 'anonymous',
-          required: true,
-          error: !!validationErrors?.anonymous,
-          helperText: validationErrors?.anonymous,
-          //remove any previous validation errors when user focuses on the input
-          onFocus: () =>
-            setValidationErrors({
-              ...validationErrors,
-              anonymous: undefined,
-            }),
-        },
+        editSelectOptions: [
+          { label: 'Registered', value: 'Registered' },
+          { label: 'Guest', value: 'Guest' },
+        ], // Dropdown options
       },
     ],
     [validationErrors],
@@ -206,7 +195,9 @@ const Example = () => {
       return;
     }
     setValidationErrors({});
-    await createUser(values);
+    // Exclude the 'id' before creating user
+    const { id, ...userData } = values;    
+    await createUser(userData);
     table.setCreatingRow(null); //exit creating mode
   };
 
@@ -218,6 +209,8 @@ const Example = () => {
       return;
     }
     setValidationErrors({});
+    // Exclude the 'id' before updating user
+    //const { id, ...userData } = values;
     await updateUser(values);
     table.setEditingRow(null); //exit editing mode
   };
@@ -276,6 +269,8 @@ const Example = () => {
           sx={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
         >
           {internalEditComponents} {/* or render custom edit components here */}
+
+
         </DialogContent>
         <DialogActions>
           <MRT_EditActionButtons variant="text" table={table} row={row} />
@@ -328,9 +323,18 @@ function useCreateUser() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (user) => {
-      //send api update request here
-      await new Promise((resolve) => setTimeout(resolve, 1000)); //fake api call
-      return Promise.resolve();
+      const response = await fetch(`${process.env.REACT_APP_SERVER_API_BASE_URL}/user`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+      if (!response.ok) {
+        console.log(response);
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
     },
     //client side optimistic update
     onMutate: (newUserInfo) => {
@@ -366,9 +370,19 @@ function useUpdateUser() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (user) => {
-      //send api update request here
-      await new Promise((resolve) => setTimeout(resolve, 1000)); //fake api call
-      return Promise.resolve();
+      console.log("useUpdateUser", user);
+      console.log("useUpdateUser", user.id);
+      const response = await fetch(`${process.env.REACT_APP_SERVER_API_BASE_URL}/user/${user.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+      if (!response.ok) {
+        throw new Error(`Error updating user: ${response.statusText}`);
+      }
+      return response.json();
     },
     //client side optimistic update
     onMutate: (newUserInfo) => {
@@ -387,9 +401,13 @@ function useDeleteUser() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (userId) => {
-      //send api update request here
-      await new Promise((resolve) => setTimeout(resolve, 1000)); //fake api call
-      return Promise.resolve();
+      const response = await fetch(`${process.env.REACT_APP_SERVER_API_BASE_URL}/user/${userId}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error(`Error deleting user: ${response.statusText}`);
+      }
+      return response.json();
     },
     //client side optimistic update
     onMutate: (userId) => {
