@@ -1,0 +1,11 @@
+{
+  "name": "Full Name",
+  "email": "user@example.com",
+  "phone": "+91-1234567890",
+  "country": "India",
+  "state": "Uttar Pradesh",
+  "city": "Aligarh",
+  "zip_code": "202001",
+  "account_type": "registered",
+  "joined_date": "2024-10-02 07:35:31"
+}
